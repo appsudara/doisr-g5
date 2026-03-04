@@ -1,0 +1,13 @@
+In data set directos.json discarded fields: 
+ actress_credits,
+ male_count,
+ female_count and actor_credits 
+ 
+In data set producers.json discarded fields:
+    first_executive_movie
+    male_count
+    female_count
+    actress_credits
+    actor_credits
+
+These data fields are discarded because is unkown for us without context and we dont see it usefull for our uses cases.
