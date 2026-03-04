@@ -1,4 +1,4 @@
-Use Case 1: Web Application of Search Film 
+Use Case 1: Web Application of Search Film
     Users of the website can search or filter a Movie. 
     This website show all the information about the movie and more details related such as actors,directors and producers. 
     It shows a catalog and poster of the movie.
@@ -20,3 +20,4 @@ Use Case 4: Web Application of Upcoming Movies
     Users will be able to see a catalog of movies that are coming out in the near future, there will be filters like genres, release date
     It will have urls that will be pointing to the movies trailers or website
     It will show the poster of the movie, actors, director, crew, genre, release date.
+    Features: <TODO>
