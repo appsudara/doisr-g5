@@ -1,0 +1,57 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix ns: <https://asudara.dev/doisrg5/movie#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+### Shape 1: Movie constraints
+ns:MovieShape 
+    a sh:NodeShape ;
+    sh:targetClass ns:movie ;
+
+    # Title: exactly 1 string
+    sh:property [
+        sh:path ns:title ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ] ;
+
+    # Release date required
+    sh:property [
+        sh:path ns:date ;
+        sh:datatype xsd:date ;
+        sh:minCount 1 ;
+    ] ;
+
+    # Budget: positive decimal
+    sh:property [ 
+        sh:path ns:budget ;
+        sh:datatype xsd:decimal ;
+        sh:minInclusive 0 ;
+    ] ;
+
+    # At least 1 actor AND must be a person
+    sh:property [
+        sh:path ns:actor ;
+        sh:class ns:person ;
+        sh:minCount 1 ;
+    ] .
+
+
+### Shape 2: Person constraints
+ns:PersonShape
+    a sh:NodeShape ;
+    sh:targetClass ns:person ;
+
+    # Name required and must be string
+    sh:property [
+        sh:path ns:name ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+    ] ;
+
+    # Age must be non-negative integer
+    sh:property [
+        sh:path ns:age ;
+        sh:datatype xsd:integer ;
+        sh:minInclusive 0 ;
+    ] .
