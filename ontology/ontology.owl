@@ -1,0 +1,411 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://appsudara.github.io/doisr-g5.github.io/"
+     xml:base="https://appsudara.github.io/doisr-g5.github.io/"
+     xmlns:mod="https://w3id.org/mod#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="https://appsudara.github.io/doisr-g5.github.io/">
+        <mod:createdWith rdf:resource="https://chowlk.linkeddata.es/"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://w3id.org/mod#createdWith -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/mod#createdWith"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#belongsToGenre -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#belongsToGenre">
+        <rdfs:domain rdf:resource="https://appsudara.github.io/doisr-g5.github.io/Movie"/>
+        <rdfs:range rdf:resource="https://appsudara.github.io/doisr-g5.github.io/Genre"/>
+        <rdfs:label>belongs to genre</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#collaboratedWith -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#collaboratedWith">
+        <rdfs:domain rdf:resource="https://appsudara.github.io/doisr-g5.github.io/Person"/>
+        <rdfs:range rdf:resource="https://appsudara.github.io/doisr-g5.github.io/Person"/>
+        <rdfs:label>collaborated with</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#debutedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#debutedIn">
+        <rdfs:domain rdf:resource="https://appsudara.github.io/doisr-g5.github.io/Actor"/>
+        <rdfs:range rdf:resource="https://appsudara.github.io/doisr-g5.github.io/Movie"/>
+        <rdfs:label>debuted in</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#directorialDebut -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#directorialDebut">
+        <rdfs:domain rdf:resource="https://appsudara.github.io/doisr-g5.github.io/Director"/>
+        <rdfs:range rdf:resource="https://appsudara.github.io/doisr-g5.github.io/Movie"/>
+        <rdfs:label>directorial debut</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#hasActor -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#hasActor">
+        <rdfs:domain rdf:resource="https://appsudara.github.io/doisr-g5.github.io/Movie"/>
+        <rdfs:range rdf:resource="https://appsudara.github.io/doisr-g5.github.io/Actor"/>
+        <rdfs:label>has actor</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#hasDirector -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#hasDirector">
+        <rdfs:domain rdf:resource="https://appsudara.github.io/doisr-g5.github.io/Movie"/>
+        <rdfs:range rdf:resource="https://appsudara.github.io/doisr-g5.github.io/Director"/>
+        <rdfs:label>has director</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#hasGender -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#hasGender">
+        <rdfs:domain rdf:resource="https://appsudara.github.io/doisr-g5.github.io/Person"/>
+        <rdfs:range rdf:resource="https://appsudara.github.io/doisr-g5.github.io/GenderCategory"/>
+        <rdfs:label>has gender</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#hasOriginalLanguage -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#hasOriginalLanguage">
+        <rdfs:domain rdf:resource="https://appsudara.github.io/doisr-g5.github.io/Movie"/>
+        <rdfs:range rdf:resource="https://appsudara.github.io/doisr-g5.github.io/Language"/>
+        <rdfs:label>has original language</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#hasProducer -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#hasProducer">
+        <rdfs:domain rdf:resource="https://appsudara.github.io/doisr-g5.github.io/Movie"/>
+        <rdfs:range rdf:resource="https://appsudara.github.io/doisr-g5.github.io/Producer"/>
+        <rdfs:label>has producer</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#hasReview -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#hasReview">
+        <rdfs:domain rdf:resource="https://appsudara.github.io/doisr-g5.github.io/Movie"/>
+        <rdfs:range rdf:resource="https://appsudara.github.io/doisr-g5.github.io/Review"/>
+        <rdfs:label>has review</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#producerDebut -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#producerDebut">
+        <rdfs:domain rdf:resource="https://appsudara.github.io/doisr-g5.github.io/Producer"/>
+        <rdfs:range rdf:resource="https://appsudara.github.io/doisr-g5.github.io/Movie"/>
+        <rdfs:label>producer debut</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#age -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#age">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label>age</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#birth -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#birth">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+        <rdfs:label>birth</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#budgetAmount -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#budgetAmount">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:label>budget amount</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#durationMinutes -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#durationMinutes">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label>duration minutes</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#movieTitle -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#movieTitle">
+        <rdfs:label>movie title</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#name">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#popularityScore -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#popularityScore">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label>popularity score</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#posterURL -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#posterURL">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <rdfs:label>poster u r l</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#releaseDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#releaseDate">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+        <rdfs:label>release date</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#summaryText -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#summaryText">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>summary text</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#voteCount -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#voteCount">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label>vote count</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://appsudara.github.io/doisr-g5.github.io/Actor -->
+
+    <owl:Class rdf:about="https://appsudara.github.io/doisr-g5.github.io/Actor">
+        <rdfs:subClassOf rdf:resource="https://appsudara.github.io/doisr-g5.github.io/Person"/>
+        <rdfs:label>Actor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://appsudara.github.io/doisr-g5.github.io/Director -->
+
+    <owl:Class rdf:about="https://appsudara.github.io/doisr-g5.github.io/Director">
+        <rdfs:subClassOf rdf:resource="https://appsudara.github.io/doisr-g5.github.io/Person"/>
+        <rdfs:label>Director</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://appsudara.github.io/doisr-g5.github.io/GenderCategory -->
+
+    <owl:Class rdf:about="https://appsudara.github.io/doisr-g5.github.io/GenderCategory">
+        <rdfs:label>Gender Category</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://appsudara.github.io/doisr-g5.github.io/Genre -->
+
+    <owl:Class rdf:about="https://appsudara.github.io/doisr-g5.github.io/Genre">
+        <rdfs:label>Genre</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://appsudara.github.io/doisr-g5.github.io/Language -->
+
+    <owl:Class rdf:about="https://appsudara.github.io/doisr-g5.github.io/Language">
+        <rdfs:label>Language</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://appsudara.github.io/doisr-g5.github.io/Movie -->
+
+    <owl:Class rdf:about="https://appsudara.github.io/doisr-g5.github.io/Movie">
+        <rdfs:label>Movie</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://appsudara.github.io/doisr-g5.github.io/Person -->
+
+    <owl:Class rdf:about="https://appsudara.github.io/doisr-g5.github.io/Person">
+        <rdfs:label>Person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://appsudara.github.io/doisr-g5.github.io/Producer -->
+
+    <owl:Class rdf:about="https://appsudara.github.io/doisr-g5.github.io/Producer">
+        <rdfs:subClassOf rdf:resource="https://appsudara.github.io/doisr-g5.github.io/Person"/>
+        <rdfs:label>Producer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://appsudara.github.io/doisr-g5.github.io/Review -->
+
+    <owl:Class rdf:about="https://appsudara.github.io/doisr-g5.github.io/Review">
+        <rdfs:label>Review</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#genderLabel -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#genderLabel">
+        <rdf:type rdf:resource="https://appsudara.github.io/doisr-g5.github.io/GenderCategory"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#genreLabel -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#genreLabel">
+        <rdf:type rdf:resource="https://appsudara.github.io/doisr-g5.github.io/Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#languageLabel -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#languageLabel">
+        <rdf:type rdf:resource="https://appsudara.github.io/doisr-g5.github.io/Language"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#reviewText -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#reviewText">
+        <rdf:type rdf:resource="https://appsudara.github.io/doisr-g5.github.io/Review"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
