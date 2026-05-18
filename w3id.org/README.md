@@ -1,2 +1,3 @@
 
-Riderect Page https://appsudara.github.io/doisr-g5.github.io/index.html
+Riderect to Page HTML https://appsudara.github.io/doisr-g5.github.io/index.html
+Page TTL https://appsudara.github.io/doisr-g5.github.io/data.ttl
