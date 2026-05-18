@@ -1,142 +1,122 @@
-@prefix ns: <https://asudara.dev/doisrg5/movie#> .
+@prefix : <https://appsudara.github.io/doisr-g5.github.io/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 
 # CONTROLLED VOCABULARY
+:Male a :GenderCategory .
+:Female a :GenderCategory .
 
-ns:Male a ns:GenderCategory .
-ns:Female a ns:GenderCategory .
+:Drama a :Genre .
+:Comedy a :Genre .
+:Action a :Genre .
 
-ns:Drama a ns:Genre .
-ns:Comedy a ns:Genre .
-ns:Action a ns:Genre .
-
-ns:English
-    a ns:Language ;
-    ns:languageCode "en" .
-
-ns:Spanish
-    a ns:Language ;
-    ns:languageCode "es" .
-
+:English a :Language .
+:Spanish a :Language .
 
 
 # VALID DATA
+:actor1
+    a :Actor ;
+    rdf:name "Leonardo DiCaprio" ;
+    rdf:age 48 ;
+    rdf:birth "1974-11-11"^^xsd:date ;
+    rdf:hasGender :Male ;
+    rdf:debutedIn :movie1 .
 
-ns:actor1
-    a ns:Actor ;
-    ns:personName "Leonardo DiCaprio" ;
-    ns:ageValue 48 ;
-    ns:hasGender ns:Male ;
-    ns:debutedIn ns:movie1 .
+:director1
+    a :Director ;
+    rdf:name "Christopher Nolan" ;
+    rdf:age 53 ;
+    rdf:birth "1970-07-30"^^xsd:date ;
+    rdf:hasGender :Male ;
+    rdf:directorialDebut :movie1 .
 
-ns:director1
-    a ns:Director ;
-    ns:personName "Christopher Nolan" ;
-    ns:ageValue 53 ;
-    ns:hasGender ns:Male ;
-    ns:directorialDebut ns:movie1 .
+:producer1
+    a :Producer ;
+    rdf:name "Emma Thomas" ;
+    rdf:age 52 ;
+    rdf:hasGender :Female ;
+    rdf:producerDebut :movie1 .
 
-ns:producer1
-    a ns:Producer ;
-    ns:personName "Emma Thomas" ;
-    ns:ageValue 52 ;
-    ns:hasGender ns:Female ;
-    ns:producerDebut ns:movie1 .
+:review1
+    a :Review ;
+    rdf:reviewText "An excellent science fiction movie with amazing visuals." .
 
-ns:review1
-    a ns:Review ;
-    ns:reviewText "An excellent science fiction movie." .
-
-ns:movie1
-    a ns:Movie ;
-    ns:movieTitle "Inception" ;
-    ns:budgetAmount "160000000"^^xsd:decimal ;
-    ns:releaseDate "2010-07-16"^^xsd:date ;
-    ns:hasActor ns:actor1 ;
-    ns:hasDirector ns:director1 ;
-    ns:hasProducer ns:producer1 ;
-    ns:belongsToGenre ns:Action ;
-    ns:hasOriginalLanguage ns:English ;
-    ns:hasReview ns:review1 .
+:movie1
+    a :Movie ;
+    rdf:movieTitle "Inception" ;
+    rdf:budgetAmount "160000000"^^xsd:decimal ;
+    rdf:releaseDate "2010-07-16"^^xsd:date ;
+    rdf:durationMinutes 148 ;
+    rdf:hasActor :actor1 ;
+    rdf:hasDirector :director1 ;
+    rdf:hasProducer :producer1 ;
+    rdf:belongsToGenre :Action ;
+    rdf:hasOriginalLanguage :English ;
+    rdf:hasReview :review1 .
 
 
 # INVALID MOVIE — wrong datatype + negative value
-
-
-ns:movie2
-    a ns:Movie ;
-    ns:movieTitle 123 ;
-    ns:budgetAmount -500 ;
-    ns:releaseDate "not-a-date" ;
-    ns:hasDirector ns:director1 ;
-    ns:hasProducer ns:producer1 ;
-    ns:belongsToGenre ns:Drama ;
-    ns:hasOriginalLanguage ns:English .
+:movie2
+    a :Movie ;
+    rdf:movieTitle 123 ;
+    rdf:budgetAmount -500 ;
+    rdf:releaseDate "not-a-date" ;
+    rdf:durationMinutes -20 ;
+    rdf:hasDirector :director1 ;
+    rdf:hasProducer :producer1 ;
+    rdf:belongsToGenre :Drama ;
+    rdf:hasOriginalLanguage :English .
 
 
 # INVALID MOVIE — missing required properties
-
-ns:movie3
-    a ns:Movie ;
-    ns:budgetAmount "50000000"^^xsd:decimal .
+:movie3
+    a :Movie ;
+    rdf:budgetAmount "50000000"^^xsd:decimal .
 
 
 # INVALID MOVIE — actor is not an Actor instance
-
-ns:movie4
-    a ns:Movie ;
-    ns:movieTitle "Fake Movie" ;
-    ns:releaseDate "2020-01-01"^^xsd:date ;
-    ns:budgetAmount "1000000"^^xsd:decimal ;
-    ns:hasActor "Bob8" ;
-    ns:hasDirector ns:director1 ;
-    ns:hasProducer ns:producer1 ;
-    ns:belongsToGenre ns:Drama ;
-    ns:hasOriginalLanguage ns:English .
+:movie4
+    a :Movie ;
+    rdf:movieTitle "Fake Movie" ;
+    rdf:releaseDate "2020-01-01"^^xsd:date ;
+    rdf:budgetAmount "1000000"^^xsd:decimal ;
+    rdf:durationMinutes 100 ;
+    rdf:hasActor "Bob8" ;
+    rdf:hasDirector :director1 ;
+    rdf:hasProducer :producer1 ;
+    rdf:belongsToGenre :Drama ;
+    rdf:hasOriginalLanguage :English .
 
 
 # INVALID ACTOR — negative age + missing gender
-
-ns:actor2
-    a ns:Actor ;
-    ns:personName "Not Real" ;
-    ns:ageValue -10 .
+:actor2
+    a :Actor ;
+    rdf:name "Not Real" ;
+    rdf:age -10 .
 
 
 # INVALID REVIEW — text too short
-
-ns:review2
-    a ns:Review ;
-    ns:reviewText "Bad" .
-
-
-# INVALID LANGUAGE — invalid language code
-
-ns:German
-    a ns:Language ;
-    ns:languageCode "german" .
-
+:review2
+    a :Review ;
+    rdf:reviewText "Bad" .
 
 # INVALID DIRECTOR — multiple debut movies
-
-
-ns:director2
-    a ns:Director ;
-    ns:personName "Fake Person" ;
-    ns:ageValue 45 ;
-    ns:hasGender ns:Male ;
-    ns:directorialDebut ns:movie1 ;
-    ns:directorialDebut ns:movie2 .
+:director2
+    a :Director ;
+    rdf:name "Fake Person" ;
+    rdf:age 45 ;
+    rdf:hasGender :Male ;
+    rdf:directorialDebut :movie1 ;
+    rdf:directorialDebut :movie2 .
 
 
 # INVALID PRODUCER — multiple producer debuts
-
-
-ns:producer2
-    a ns:Producer ;
-    ns:personName "Fake Producer" ;
-    ns:ageValue 40 ;
-    ns:hasGender ns:Male ;
-    ns:producerDebut ns:movie1 ;
-    ns:producerDebut ns:movie2 .
+:producer2
+    a :Producer ;
+    rdf:name "Fake Producer" ;
+    rdf:age 40 ;
+    rdf:hasGender :Male ;
+    rdf:producerDebut :movie1 ;
+    rdf:producerDebut :movie2 .
