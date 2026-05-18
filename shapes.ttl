@@ -1,141 +1,145 @@
 @prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix ns: <https://asudara.dev/doisrg5/movie#> .
+@prefix : <https://appsudara.github.io/doisr-g5.github.io/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 
-## Shape 1: MovieShape
-
-ns:MovieShape
+# Shape 1: MovieShape
+:MovieShape
     a sh:NodeShape ;
-    sh:targetClass ns:Movie ;
+    sh:targetClass :Movie ;
 
     sh:property [
-        sh:path ns:movieTitle ;
+        sh:path rdf:movieTitle ;
         sh:datatype xsd:string ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
     ] ;
 
     sh:property [
-        sh:path ns:releaseDate ;
+        sh:path rdf:releaseDate ;
         sh:datatype xsd:date ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
     ] ;
 
     sh:property [
-        sh:path ns:budgetAmount ;
+        sh:path rdf:budgetAmount ;
         sh:datatype xsd:decimal ;
         sh:minInclusive 0 ;
     ] ;
 
     sh:property [
-        sh:path ns:hasActor ;
-        sh:class ns:Actor ;
+        sh:path rdf:durationMinutes ;
+        sh:datatype xsd:integer ;
+        sh:minInclusive 1 ;
+    ] ;
+
+    sh:property [
+        sh:path rdf:hasActor ;
+        sh:class :Actor ;
         sh:minCount 1 ;
     ] ;
 
     sh:property [
-        sh:path ns:hasDirector ;
-        sh:class ns:Director ;
+        sh:path rdf:hasDirector ;
+        sh:class :Director ;
         sh:minCount 1 ;
     ] ;
 
     sh:property [
-        sh:path ns:hasProducer ;
-        sh:class ns:Producer ;
+        sh:path rdf:hasProducer ;
+        sh:class :Producer ;
         sh:minCount 1 ;
     ] ;
 
     sh:property [
-        sh:path ns:belongsToGenre ;
-        sh:class ns:Genre ;
+        sh:path rdf:belongsToGenre ;
+        sh:class :Genre ;
         sh:minCount 1 ;
     ] ;
 
     sh:property [
-        sh:path ns:hasOriginalLanguage ;
-        sh:class ns:Language ;
+        sh:path rdf:hasOriginalLanguage ;
+        sh:class :Language ;
         sh:minCount 1 ;
     ] .
 
-## Shape 2: PersonShape
 
-
-ns:PersonShape
+# Shape 2: PersonShape
+:PersonShape
     a sh:NodeShape ;
-    sh:targetClass ns:Person ;
+    sh:targetClass :Person ;
 
     sh:property [
-        sh:path ns:personName ;
+        sh:path rdf:name ;
         sh:datatype xsd:string ;
         sh:minCount 1 ;
     ] ;
 
     sh:property [
-        sh:path ns:ageValue ;
+        sh:path rdf:age ;
         sh:datatype xsd:integer ;
         sh:minInclusive 0 ;
         sh:maxInclusive 120 ;
     ] ;
 
     sh:property [
-        sh:path ns:hasGender ;
-        sh:class ns:GenderCategory ;
+        sh:path rdf:birth ;
+        sh:datatype xsd:date ;
+    ] ;
+
+    sh:property [
+        sh:path rdf:hasGender ;
+        sh:class :GenderCategory ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
     ] .
 
 
-## Shape 3: ActorShape
-
-
-ns:ActorShape
+# Shape 3: ActorShape
+:ActorShape
     a sh:NodeShape ;
-    sh:targetClass ns:Actor ;
+    sh:targetClass :Actor ;
 
     sh:property [
-        sh:path ns:debutedIn ;
-        sh:class ns:Movie ;
+        sh:path rdf:debutedIn ;
+        sh:class :Movie ;
         sh:maxCount 1 ;
     ] .
 
 
-## Shape 4: DirectorShape
-
-
-ns:DirectorShape
+# Shape 4: DirectorShape
+:DirectorShape
     a sh:NodeShape ;
-    sh:targetClass ns:Director ;
+    sh:targetClass :Director ;
 
     sh:property [
-        sh:path ns:directorialDebut ;
-        sh:class ns:Movie ;
+        sh:path rdf:directorialDebut ;
+        sh:class :Movie ;
         sh:maxCount 1 ;
     ] .
 
 
-## Shape 5: ProducerShape
-
-ns:ProducerShape
+# Shape 5: ProducerShape
+:ProducerShape
     a sh:NodeShape ;
-    sh:targetClass ns:Producer ;
+    sh:targetClass :Producer ;
 
     sh:property [
-        sh:path ns:producerDebut ;
-        sh:class ns:Movie ;
+        sh:path rdf:producerDebut ;
+        sh:class :Movie ;
         sh:maxCount 1 ;
     ] .
 
 
-## SHAPE 6: ReviewShape
-
-ns:ReviewShape
+# Shape 6: ReviewShape
+:ReviewShape
     a sh:NodeShape ;
-    sh:targetClass ns:Review ;
+    sh:targetClass :Review ;
 
     sh:property [
-        sh:path ns:reviewText ;
+        sh:path rdf:reviewText ;
         sh:datatype xsd:string ;
         sh:minLength 10 ;
         sh:maxLength 500 ;
@@ -143,29 +147,21 @@ ns:ReviewShape
     ] .
 
 
-## Shape 7: GenreShape
-
-ns:GenreShape
+# Shape 7: GenreShape
+:GenreShape
     a sh:NodeShape ;
-    sh:targetClass ns:Genre ;
+    sh:targetClass :Genre ;
 
     sh:in (
-        ns:Drama
-        ns:Comedy
-        ns:Action
-        ns:Horror
+        rdf:genreLabel
     ) .
 
 
-## Shape 8: LanguageShape
-
-
-ns:LanguageShape
+# Shape 8: LanguageShape
+:LanguageShape
     a sh:NodeShape ;
-    sh:targetClass ns:Language ;
+    sh:targetClass :Language ;
 
-    sh:property [
-        sh:path ns:languageCode ;
-        sh:datatype xsd:string ;
-        sh:pattern "^[a-z]{2}$" ;
-    ] .
+    sh:in (
+        rdf:languageLabel
+    ) .
